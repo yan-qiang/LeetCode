@@ -151,7 +151,7 @@ public class BinaryTree {
 
 
     public static void main(String[] args) {
-        BinaryTree binaryTree = new BinaryTree();
+       /* BinaryTree binaryTree = new BinaryTree();
         boolean b = binaryTree.insertNode(3);
         boolean c = binaryTree.insertNode(2);
         boolean d = binaryTree.insertNode(5);
@@ -162,10 +162,8 @@ public class BinaryTree {
         Node node = binaryTree.getNode(5);
         Node node2 = binaryTree.getMaxNode();
         System.out.println(node.data);
-        System.out.println(node2.data);
+        System.out.println(node2.data);*/
     }
-
-
 
 
 
