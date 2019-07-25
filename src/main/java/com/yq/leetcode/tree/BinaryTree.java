@@ -150,6 +150,28 @@ public class BinaryTree {
 
 
 
+    /**
+     * @Author : Yanqiang
+     * @Date : 2019-07-25
+     * @Params : [key]
+     * @Return : boolean
+     * @Description : 删除节点
+     *
+     *    删除节点是二叉搜索树中最复杂的操作，
+     *    删除的节点有三种情况，前两种比较简单，但是第三种却很复杂。
+     *
+     * 　　1、该节点是叶节点（没有子节点）
+     *
+     * 　　2、该节点有一个子节点
+     *
+     * 　　3、该节点有两个子节点
+     */
+    private boolean delete(int key){
+
+        return false;
+    }
+
+
     public static void main(String[] args) {
        /* BinaryTree binaryTree = new BinaryTree();
         boolean b = binaryTree.insertNode(3);
