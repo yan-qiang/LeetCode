@@ -47,6 +47,7 @@ public class InsertSort {
         }
     }
 
+
     /* A utility function to print array of size n*/
     static void printArray(int arr[]) {
         int n = arr.length;
@@ -55,6 +56,7 @@ public class InsertSort {
 
         System.out.println();
     }
+
 
     // Driver method
     public static void main(String args[]) {
