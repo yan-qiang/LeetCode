@@ -1,5 +1,7 @@
 package com.yq.leetcode.string;
 
+import com.sun.codemodel.internal.JForEach;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,11 +49,7 @@ public class Solution {
         return res;
     }
 
-    public static void main(String[] args) {
-        //int[] nums = {3,2,4};
-        int[] nums = {2, 7, 11, 15};
-        System.out.println(Arrays.toString(twoSum2(nums, 9)));
-        }
+
 
 
     /**
@@ -113,5 +111,30 @@ public class Solution {
         }
 
         return 1;
+    }
+
+
+    public static void main(String[] args) {
+        //int[] nums = {3,2,4};
+        //int[] nums = {2, 7, 11, 15};
+        //System.out.println(Arrays.toString(twoSum2(nums, 9)));
+        String str = "abcdabcdaaa";
+        Map<Character, Integer> a = a(str);
+        for (Map.Entry<Character, Integer> i : a.entrySet()) {
+            System.out.println("key:"+i.getKey() +" value "+ i.getValue());
+        }
+    }
+
+    private static Map a(String str){
+        Map<Character, Integer> map = new HashMap<>();
+        char[] chars = str.toCharArray();
+        for (char c : chars) {
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) + 1);
+            } else {
+                map.put(c, 1);
+            }
+        }
+        return map;
     }
 }
