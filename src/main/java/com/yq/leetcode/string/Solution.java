@@ -125,6 +125,13 @@ public class Solution {
         }
     }
 
+    /**
+     * @Author : Yanqiang
+     * @Date : 2019-08-15
+     * @Params : [str]
+     * @Return : java.util.Map
+     * @Description : 这个真心算是比较简单的一个题了，前两天朋友面试遇到了
+     */
     private static Map a(String str){
         Map<Character, Integer> map = new HashMap<>();
         char[] chars = str.toCharArray();
