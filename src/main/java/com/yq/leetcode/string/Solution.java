@@ -131,6 +131,7 @@ public class Solution {
      * @Params : [str]
      * @Return : java.util.Map
      * @Description : 这个真心算是比较简单的一个题了，前两天朋友面试遇到了
+     * 先切分，存 map，value 存次数，包含就+1
      */
     private static Map a(String str){
         Map<Character, Integer> map = new HashMap<>();
