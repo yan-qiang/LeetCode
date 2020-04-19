@@ -9,7 +9,6 @@ package com.yq.leetcode.Sort;
 public class ReverseLinkArr {
 
     public static void main(String[] args) {
-
         Node node = new Node(1, null);
         Node node2 = new Node(2, null);
         node.after = node2;
