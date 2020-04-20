@@ -4,7 +4,7 @@ package com.yq.leetcode.Sort;
  * @ClassName :  ReverseLinkArr
  * @Author :  Yanqinag
  * @Date :  2020-04-19 12:52
- * @Description : 链表倒序
+ * @Description : 链表倒序  1-2-3-4  to  4-3-2-1
  */
 public class ReverseLinkArr {
 
@@ -23,9 +23,13 @@ public class ReverseLinkArr {
         Node surplus = node;
         Node result = null;
         while (surplus != null) {
+            // temp = 234
             Node temp = surplus.after;
+            // 1.after = null, 第二次：2.after = 1，第三次：after = 21 ...
             surplus.after = result;
+            // result = 1
             result = surplus;
+            //surplus = 234
             surplus = temp;
         }
         System.out.println(result);
@@ -46,27 +50,5 @@ public class ReverseLinkArr {
             this.value = value;
             this.after = after;
         }
-
-        public int getValue() {
-            return value;
-        }
-
-
-        public Node getAfter() {
-            return after;
-        }
-
-
-        public void setValue(int value) {
-            this.value = value;
-        }
-
-
-        public void setAfter(Node after) {
-            this.after = after;
-        }
-
-
     }
-
 }
