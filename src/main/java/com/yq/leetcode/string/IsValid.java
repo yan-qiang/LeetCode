@@ -40,7 +40,7 @@ public class IsValid {
      * @Date : 2020-04-21
      * @Params : [chars]
      * @Return : boolean
-     * @Description : 最差解！!
+     * @Description : 最差解！
      */
     private static boolean ifBoolean(char[] chars){
         for (int i = 0; i < chars.length; i++) {
