@@ -1,5 +1,7 @@
 package com.yq.leetcode.string;
 
+import java.util.HashSet;
+
 /**
  * @ClassName :  isValid
  * @Author :  Yanqinag
@@ -31,46 +33,6 @@ public class IsValid {
      */
     public static void main(String[] args) {
         char[] chars = str.toCharArray();
-        boolean b = ifBoolean(chars);
-        System.out.println(b);
-    }
-
-    /**
-     * @Author : Yanqiang
-     * @Date : 2020-04-21
-     * @Params : [chars]
-     * @Return : boolean
-     * @Description : 最差解！!
-     */
-    private static boolean ifBoolean(char[] chars){
-        for (int i = 0; i < chars.length; i++) {
-            if(i+1 <= chars.length-1) {
-                String aChar = String.valueOf(chars[i]);
-                String bChar = String.valueOf(chars[i + 1]);
-                if ("(".equals(aChar)) {
-                    if (")".equals(bChar)) {
-                        return true;
-                    }
-                    continue;
-                }
-                if ("{".equals(aChar)) {
-                    if ("}".equals(bChar)) {
-                        return true;
-                    }
-                    continue;
-                }
-                if ("[".equals(aChar)) {
-                    if ("]".equals(bChar)) {
-                        return true;
-                    }
-                    continue;
-                }
-                if ("".equals(aChar)){
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
 }
