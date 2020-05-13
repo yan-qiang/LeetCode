@@ -1,5 +1,7 @@
 package com.yq.leetcode.utils;
 
+import org.springframework.web.servlet.theme.FixedThemeResolver;
+
 import java.util.*;
 
 /**
@@ -40,5 +42,6 @@ public class Test {
      * select s.sid, s,Sname, avg(score) as avg_score Student s left join SC c On s.sid = c.sid group by c.sid,c.Sname having avg(score) > 60
      *
      */
+
 
 }
