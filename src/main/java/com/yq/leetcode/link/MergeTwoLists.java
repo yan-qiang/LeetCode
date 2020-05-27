@@ -1,5 +1,7 @@
 package com.yq.leetcode.link;
 
+import com.yq.leetcode.base.model.SingleLinkedNode;
+
 /**
  * @ClassName :  MergeTwoLists
  * @Author :  Yanqinag
@@ -17,65 +19,42 @@ package com.yq.leetcode.link;
  */
 public class MergeTwoLists {
 
-    static class Node{
-        int val;
-        Node next;
-        Node(int val){
-            this.val = val;
-        }
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "val=" + val +
-                    ", next=" + next +
-                    '}';
-        }
-    }
-
-
     public static void main(String[] args) {
 
-        Node nodeJ = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        node3.next = new Node(4);
-        node2.next = node3;
-        nodeJ.next = node2;
+        SingleLinkedNode singleLinkedNodeJ = new SingleLinkedNode(1);
+        SingleLinkedNode singleLinkedNode2 = new SingleLinkedNode(2);
+        SingleLinkedNode singleLinkedNode3 = new SingleLinkedNode(3);
+        singleLinkedNode3.next = new SingleLinkedNode(4);
+        singleLinkedNode2.next = singleLinkedNode3;
+        singleLinkedNodeJ.next = singleLinkedNode2;
 
-        Node nodeK = new Node(3);
-        Node node5 = new Node(5);
-        node5.next = new Node(6);
-        nodeK.next = node5;
+        SingleLinkedNode singleLinkedNodeK = new SingleLinkedNode(3);
+        SingleLinkedNode singleLinkedNode5 = new SingleLinkedNode(5);
+        singleLinkedNode5.next = new SingleLinkedNode(6);
+        singleLinkedNodeK.next = singleLinkedNode5;
 
-        System.out.println(nodeJ);
-        System.out.println(nodeK);
+        System.out.println(singleLinkedNodeJ);
+        System.out.println(singleLinkedNodeK);
 
-        Node node = MergeLists(nodeJ, nodeK);
-        System.out.println(node);
+        SingleLinkedNode singleLinkedNode = mergeTwoNode(singleLinkedNodeJ, singleLinkedNodeK);
+        System.out.println(singleLinkedNode);
 
     }
 
-
-    public static Node MergeLists(Node n1, Node n2){
-
-        Node prehead = new Node(-1);
-
-        Node prev = prehead;
-        while (n1 != null && n2 != null) {
-            if (n1.val <= n2.val) {
-                prev.next = n1;
+    public static SingleLinkedNode mergeTwoNode(SingleLinkedNode n1, SingleLinkedNode n2){
+        SingleLinkedNode singleLinkedNode = new SingleLinkedNode(-1);
+        SingleLinkedNode curr = singleLinkedNode;
+        while (n1 != null && n2 != null){
+            if (n1.val <= n2.val){
+                curr.next = n1;
                 n1 = n1.next;
-            } else {
-                prev.next = n2;
+            }else {
+                curr.next = n2;
                 n2 = n2.next;
             }
-            prev = prev.next;
+            curr = curr.next;
         }
-
-        // 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
-        prev.next = n1 == null ? n2 : n1;
-
-        return prehead.next;
+        curr.next = n1 == null ? n2 : n1;
+        return singleLinkedNode.next;
     }
 }

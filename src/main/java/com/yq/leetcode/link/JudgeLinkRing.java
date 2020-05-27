@@ -1,5 +1,7 @@
 package com.yq.leetcode.link;
 
+import com.yq.leetcode.base.model.SingleLinkedNode;
+
 import java.util.HashSet;
 
 /**
@@ -10,29 +12,13 @@ import java.util.HashSet;
  */
 public class JudgeLinkRing {
 
-    static class Node{
-        int val;
-        Node next;
-        Node(int val){
-            this.val = val;
-        }
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "val=" + val +
-                    ", next=" + next +
-                    '}';
-        }
-    }
-
     public static void main(String[] args) {
-        Node node = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        node3.next = new Node(4);
-        node2.next = node3;
-        node.next = node2;
+        SingleLinkedNode singleLinkedNode = new SingleLinkedNode(1);
+        SingleLinkedNode singleLinkedNode2 = new SingleLinkedNode(2);
+        SingleLinkedNode singleLinkedNode3 = new SingleLinkedNode(3);
+        singleLinkedNode3.next = new SingleLinkedNode(4);
+        singleLinkedNode2.next = singleLinkedNode3;
+        singleLinkedNode.next = singleLinkedNode2;
 
     }
 
@@ -43,15 +29,15 @@ public class JudgeLinkRing {
      * @Return : java.lang.Boolean
      * @Description : set遍历法，O(n)
      */
-    public static Boolean linkRing(Node node){
-        if (node == null){
+    public static Boolean linkRing(SingleLinkedNode singleLinkedNode){
+        if (singleLinkedNode == null){
             return false;
         }
-        HashSet<Node> set = new HashSet<>();
-        while (node.next != null){
-            if (!set.contains(node)) {
-                set.add(node);
-                node = node.next;
+        HashSet<SingleLinkedNode> set = new HashSet<>();
+        while (singleLinkedNode.next != null){
+            if (!set.contains(singleLinkedNode)) {
+                set.add(singleLinkedNode);
+                singleLinkedNode = singleLinkedNode.next;
             }else {
                 return true;
             }
