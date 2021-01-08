@@ -27,7 +27,7 @@ public class VerifyBrackets {
         for (int i = 0; i < n; i++) {
             char ch = s.charAt(i);
             if (pairs.containsKey(ch)) {
-                if (stack.isEmpty() || stack.peek() != pairs.get(ch)) {
+                if (stack.isEmpty() || !stack.peek().equals(pairs.get(ch))) {
                     return false;
                 }
                 stack.pop();
@@ -38,11 +38,11 @@ public class VerifyBrackets {
         return stack.isEmpty();
     }
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         System.out.println(test("[(){}]"));
-    }
+    }*/
 
-
+/*
     //理解
     public static boolean test(String s){
         //如果长度为单数，说明不匹配
@@ -75,5 +75,51 @@ public class VerifyBrackets {
         }
         return stack.isEmpty();
     }
+
+
+*//*    public static void main(String[] args) {
+       int[] cost = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
+        System.out.println(minCostClimbingStairs(cost));
+    }*//*
+
+    public static int minCostClimbingStairs(int[] cost) {
+        int n = cost.length;
+        int[] dp = new int[n + 1];
+        dp[0] = dp[1] = 0;
+        for (int i = 2; i <= n; i++) {
+
+            int i1 = dp[i - 1];
+            int i2 = cost[i - 1];
+
+            int i3 = dp[i - 2];
+            int i4 = cost[i - 2];
+
+            dp[i] = Math.min( i1 + i2, i3 + i4);
+        }
+        return dp[n];
+    }
+
+
+    public static void main(String[] args) {
+        int[] cost = {1,1,1,1,1};
+        System.out.println(runningSum(cost));
+    }
+    public static int[] runningSum(int[] nums) {
+
+        int[] arr = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+
+            if (i == 0){
+                arr[i] = nums[i];
+            }else {
+                arr[i] = arr[i-1] + nums[i];
+            }
+        }
+
+        for (int i : arr) {
+            System.out.println(i);
+        }
+        return arr;
+    }*/
 
 }
